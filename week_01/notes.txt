@@ -1,0 +1,22 @@
+// week 1 cs50
+
+printf is same as say
+
+floating-point imprecision
+%c
+%f
+%d
+%i
+%lld
+%s
+
+escape sequences:
+\a
+\n
+\r
+\t
+\'
+\"
+\\
+\0
+
