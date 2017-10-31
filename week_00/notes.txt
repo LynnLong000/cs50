@@ -1,0 +1,24 @@
+// week 0
+
+// next week code will look something like this
+
+#include <stdio.h>
+
+int main(void)
+{
+    printf("hello, world\n");
+}
+
+functions, or actions that do something
+
+loops, which do something over and over again
+
+variables, a placeholder for values
+
+Boolean expressions, true or false questions
+
+conditions, branches or forks in the road
+
+arrays, threads, events, fancier constructs we’ll look at as we go along
+
+ie
