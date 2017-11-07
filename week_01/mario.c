@@ -2,13 +2,12 @@
 #include <stdio.h>
 
 int main (void){
-    printf("Get height of mario's pyramid: ");
-    int height = get_int();
+    int height = get_int("Get height of mario's pyramid: ");
     int hash = 1;
-    int spots = 1 + height;
-    int space = spots - hash;
+    int space = 0;
 
-    if ( height < 23 && height > 0){
+    if ( height < 24 && height > 0){
+        space = height - hash;
         for(int i = 0; i < height; i++){
             for (int j = 0; j < space; j++){
                 printf(" ");
@@ -24,11 +23,33 @@ int main (void){
                 printf("#");
             }
 
-            printf(" \n");
+            printf("\n");
             hash++;
             space--;
-        } else {
-            printf("try again!!");
+        }
+    } else if (height < 0){
+        printf("wrong");
+    } else if (height > 23){
+        height = height / 10;
+        space = height - hash;
+        for(int i = 0; i < height; i++){
+            for (int j = 0; j < space; j++){
+                printf(" ");
+            }
+
+            for (int j = 0; j < hash; j++){
+                printf("#");
+            }
+
+            printf("  ");
+
+            for(int j = 0; j < hash; j++){
+                printf("#");
+            }
+
+            printf("\n");
+            hash++;
+            space--;
         }
     }
 }
