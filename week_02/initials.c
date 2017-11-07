@@ -7,7 +7,7 @@
 
 int main(void){
 
-    string s = get_string("enter full name: ");
+    string s = get_string("enter full name: \n");
     int length = strlen(s);
 
     for(int i = 0; i < length; i++){
