@@ -14,6 +14,7 @@ int main (void){
         height = height / 10;
         mario(height);
     }
+    return 0;
 }
 
 int mario(int height){
