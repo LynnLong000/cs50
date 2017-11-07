@@ -9,7 +9,7 @@ int main(int argc, string argv[]){
         int key = atoi (argv[1]);
         string plainText = get_string("Plain Text: ");
         int stringLength = strlen(plainText);
-        printf("Cipher Text: ");
+        printf("ciphertext: ");
 
         for ( int i = 0; i< stringLength; i++){
             if (plainText[i] >='a' && plainText[i] <= 'z'){
@@ -25,5 +25,6 @@ int main(int argc, string argv[]){
 
     else {
         printf ( "Trying Again !\n");
+        return 1;
     }
 }
