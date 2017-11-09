@@ -4,17 +4,15 @@
 int mario(int height);
 
 int main (void){
-    int height = get_int("Get height of mario's pyramid: ");
+    int height;
 
-    if ( height < 24 && height > 0){
-        mario(height);
-    } else if (height < 0){
-        printf("wrong\n");
-    } else if (height > 23){
-        height = height / 10;
-        mario(height);
+    do {
+        height = get_int("Get height of mario's pyramid: ");
     }
-    return 0;
+
+    while( height < 0 || height > 23);
+
+    mario(height);
 }
 
 int mario(int height){
