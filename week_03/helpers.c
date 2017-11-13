@@ -23,11 +23,11 @@ bool search(int value, int values[], int n)
 
     while(end >= start){
         middle = (start + end) / 2 ;
-        if(value == values[middle]){
+        if(values[middle] == value){
             return true;
-        } else if (value > values[middle] ){
+        } else if (values[middle] > value ){
             end = middle - 1;
-        } else if (value < values[middle] ){
+        } else if (values[middle] < value ){
             start = middle + 1;
         }
     }
@@ -39,11 +39,13 @@ bool search(int value, int values[], int n)
  */
 void sort(int values[], int n)
 {
-    for(int i = 0; i < n; i++){
-        if ( values[i] > values[i+1]){
-            int holder = values[i+1];
-            values[i+1] = values[i];
-            values[i] = holder;
+    for(int i = 0; i < n-1; i++){
+        for(int j = 0; j < n-1; j++){
+            if ( values[j] > values[j+1]){
+                int holder = values[j+1];
+                values[j+1] = values[j];
+                values[j] = holder;
+            }
         }
     }
 }
