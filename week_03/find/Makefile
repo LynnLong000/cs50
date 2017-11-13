@@ -13,4 +13,3 @@ generate: generate.c
 
 clean:
 	rm -f *.o a.out core find generate
-
