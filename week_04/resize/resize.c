@@ -82,10 +82,10 @@ int main(int argc, char *argv[])
     // iterate over infile's scanlines
     for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
     {
-        for(int repeat = 0; repeat < n; repeat++)
+        for(int j = 0; j < n; j++)
         {
             // iterate over pixels in scanline
-            for (int j = 0; j < bi.biWidth; j++)
+            for (int k = 0; k < bi.biWidth; k++)
             {
                 // temporary storage
                 RGBTRIPLE triple;
@@ -108,7 +108,7 @@ int main(int argc, char *argv[])
                 fputc(0x00, outptr);
             }
 
-            if(repeat < n-1)
+            if(j < n-1)
             {
                 fseek(inptr, -(bi.biWidth * 3 + padding), SEEK_CUR);
             }
