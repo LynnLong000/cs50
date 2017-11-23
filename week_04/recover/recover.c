@@ -2,7 +2,7 @@
 #include <cs50.h>
 #include "bmp.h"
 
-int main(void)
+int main()
 {
     FILE* fileOpen = fopen("card.raw", "r");
     if(fileOpen == NULL)
