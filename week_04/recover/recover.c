@@ -2,13 +2,18 @@
 #include <cs50.h>
 #include "bmp.h"
 
-int main()
+int main(int argc, string argv[])
 {
-    FILE* fileOpen = fopen("card.raw", "r");
+    if (argc != 2)
+    {
+        fprintf(stderr, "Usage: ./recover image\n");
+        return 1;
+    }
+    FILE* fileOpen = fopen(argv[1], "r");
     if(fileOpen == NULL)
     {
         printf("No file.\n");
-        return 0;
+        return 1;
     }
     BYTE buffer[512];
     bool isFound = false;
@@ -28,7 +33,7 @@ int main()
                 newjpeg = fopen(fileName,"w");
                 if(newjpeg == NULL)
                 {
-                    return 2;
+                    return 1;
                 }
                 fwrite(buffer,1,512,newjpeg);
             }
@@ -41,7 +46,7 @@ int main()
                 newjpeg = fopen(fileName,"w");
                 if(newjpeg == NULL)
                 {
-                    return 2;
+                    return 0;
                 }
                 fwrite(buffer,1,512,newjpeg);
             }
