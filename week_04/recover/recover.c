@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <cs50.h>
-#include "bmp.h"
+#include <stdint.h>
+typedef uint8_t  BYTE;
+
 
 int main(int argc, string argv[])
 {
@@ -46,7 +48,7 @@ int main(int argc, string argv[])
                 newjpeg = fopen(fileName,"w");
                 if(newjpeg == NULL)
                 {
-                    return 0;
+                    return 1;
                 }
                 fwrite(buffer,1,512,newjpeg);
             }
@@ -61,5 +63,4 @@ int main(int argc, string argv[])
     }
     fclose(newjpeg);
     fclose(fileOpen);
-    return 0;
 }
